@@ -1,0 +1,40 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f4ed">
+  <title>{% block title %}FitBuddy{% endblock %} · FitBuddy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  {% block head %}{% endblock %}
+</head>
+<body data-page="{{ page_name|default:'' }}">
+  <header class="site-header">
+    <a class="brand" href="/" aria-label="FitBuddy home"><span class="brand-mark" aria-hidden="true">f</span><span>fitbuddy<span class="brand-period">.</span></span></a>
+    <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="/dashboard/" data-auth-link>Dashboard</a>
+      <a href="/plan/" data-auth-link>My plan</a>
+      <a href="/nutrition/" data-auth-link>Nutrition</a>
+      <a href="/tips/" data-auth-link>Daily tips</a>
+      <a href="/admin/" data-admin-link hidden>Admin</a>
+      <a href="/login/" data-guest-link>Log in</a>
+      <a class="nav-cta" href="/profile/" data-plan-link>Create my plan <span aria-hidden="true">↗</span></a>
+      <button class="nav-logout" type="button" data-logout hidden>Log out</button>
+    </nav>
+  </header>
+  <main>{% block content %}{% endblock %}</main>
+  <footer class="site-footer">
+    <a class="brand brand-footer" href="/"><span class="brand-mark" aria-hidden="true">f</span><span>fitbuddy<span class="brand-period">.</span></span></a>
+    <p>Small steps. Stronger days.</p>
+    <span class="footer-note">General wellness guidance, not medical advice.</span>
+  </footer>
+  <div class="toast" role="status" aria-live="polite"></div>
+  <script src="{% static 'js/app.js' %}" defer></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

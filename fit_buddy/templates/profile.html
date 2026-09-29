@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Your profile{% endblock %}
+{% block content %}
+<section class="page-heading section-wrap"><div><p class="eyebrow"><span class="eyebrow-dot"></span> YOUR STARTING POINT</p><h1>A little about <em>you.</em></h1><p class="page-lede">Your details help shape a plan around your goals and everyday routine.</p></div><div class="step-marker"><span>01</span><i></i><span>02</span><small>PROFILE / PLAN</small></div></section>
+<section class="form-layout section-wrap">
+  <form class="panel form-panel" data-form="profile">
+    <div class="form-intro"><span class="form-icon" aria-hidden="true">✳</span><div><h2>Build your profile</h2><p>Fields marked <b>*</b> are required. Your information stays attached to your account.</p></div></div>
+    <fieldset><legend>About you</legend><div class="form-grid">
+      <label class="field field-span">Name<input name="name" autocomplete="name" maxlength="100" required placeholder="How should we call you?"></label>
+      <label class="field">Age<input name="age" type="number" min="16" max="100" required placeholder="e.g. 28"></label>
+      <label class="field">Gender<select name="gender" required><option value="">Select one</option><option value="woman">Woman</option><option value="man">Man</option><option value="nonbinary">Non-binary</option><option value="prefer_not_to_say">Prefer not to say</option></select></label>
+      <label class="field">Height <span class="field-unit">cm</span><input name="height_cm" type="number" min="120" max="230" required placeholder="e.g. 170"></label>
+      <label class="field">Weight <span class="field-unit">kg</span><input name="weight_kg" type="number" min="30" max="300" step="0.1" required placeholder="e.g. 68"></label>
+    </div></fieldset>
+    <fieldset><legend>Movement</legend><div class="form-grid">
+      <label class="field">Fitness level<select name="fitness_level" required><option value="">Choose your level</option><option value="beginner">Beginner</option><option value="intermediate">Intermediate</option><option value="advanced">Advanced</option></select></label>
+      <label class="field">Your goal<select name="goal" required><option value="">Choose a goal</option><option value="weight_loss">Weight loss</option><option value="muscle_gain">Muscle gain</option><option value="maintenance">Weight maintenance</option><option value="general_fitness">General fitness</option></select></label>
+      <label class="field">Daily activity<select name="activity_level" required><option value="">Choose your usual day</option><option value="mostly_sitting">Mostly sitting</option><option value="light">Lightly active</option><option value="moderate">Moderately active</option><option value="very_active">Very active</option></select></label>
+      <label class="field">Workout days per week<input name="workout_days" type="number" min="1" max="7" required value="3"></label>
+      <label class="field">Time per workout <span class="field-unit">minutes</span><input name="workout_minutes" type="number" min="15" max="180" required value="40"></label>
+      <label class="field field-span">Available equipment<input name="equipment" maxlength="300" placeholder="e.g. dumbbells, resistance bands, or none"></label>
+    </div></fieldset>
+    <fieldset><legend>Food & recovery</legend><div class="form-grid">
+      <label class="field">Dietary preference<select name="dietary_preference" required><option value="">Choose one</option><option value="vegetarian">Vegetarian</option><option value="non_vegetarian">Non-vegetarian</option><option value="vegan">Vegan</option></select></label>
+      <label class="field">Daily water intake <span class="field-unit">liters</span><input name="water_liters" type="number" min="0.5" max="8" step="0.1" required value="2"></label>
+      <label class="field field-span">Food preferences<input name="food_preferences" maxlength="500" placeholder="Foods or cuisines you enjoy"></label>
+      <label class="field field-span">Food allergies<input name="allergies" maxlength="500" placeholder="List allergies, or enter none"></label>
+      <label class="field">Average sleep <span class="field-unit">hours</span><input name="sleep_hours" type="number" min="3" max="16" step="0.1" required value="7"></label>
+    </div></fieldset>
+    <div class="form-error" data-form-error role="alert"></div>
+    <button class="button button-dark button-wide" type="submit">Generate my plan <span aria-hidden="true">↗</span></button>
+    <p class="form-footnote">Your plan is general wellness guidance. You can change your profile and regenerate at any time.</p>
+  </form>
+  <aside class="form-aside"><div class="aside-art"><img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=900&q=80" alt="Person stretching on a mat in a bright studio" loading="lazy"><span class="aside-art-label">START<br>WHERE<br>YOU ARE.</span></div><div class="aside-note"><span class="note-mark">✳</span><div><strong>Built around real life</strong><p>There is no perfect starting point. Your plan will make room for rest, gradual progress, and the equipment you have.</p></div></div><a href="/register/?next=/profile/" class="text-link">New here? Create an account <span aria-hidden="true">↗</span></a><a href="/login/?next=/profile/" class="text-link">Already have an account? Sign in <span aria-hidden="true">↗</span></a></aside>
+</section>
+{% endblock %}

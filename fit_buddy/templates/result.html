@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Your plan overview{% endblock %}
+{% block content %}
+<section class="page-heading section-wrap"><div><p class="eyebrow"><span class="eyebrow-dot"></span> YOUR PERSONAL PLAN</p><h1>A good place to <em>begin.</em></h1><p class="page-lede" data-plan-headline>Your plan is ready when you are.</p></div><a class="button button-outline" href="/profile/">Edit profile <span aria-hidden="true">↗</span></a></section>
+<section class="section-wrap content-section" data-plan-content>
+  <div class="plan-banner"><div><span class="eyebrow eyebrow-light">YOUR FOCUS</span><h2 data-summary-goal>Personalized for you</h2><p data-motivation></p></div><div class="banner-stats"><div><strong data-summary-days>—</strong><span>sessions / week</span></div><div><strong data-summary-minutes>—</strong><span>minutes / session</span></div></div></div>
+  <div class="overview-grid"><article class="panel overview-main"><div class="panel-heading"><div><span class="eyebrow">THE WEEK AHEAD</span><h2>Movement that fits</h2></div><a href="/plan/" class="text-link">Full schedule ↗</a></div><div class="preview-days" data-workout-preview></div></article>
+    <aside class="panel nutrition-glance"><span class="eyebrow">A DAILY GUIDE</span><h2>Fuel your day</h2><div class="calorie-value"><strong data-calories>—</strong><span>estimated<br>kcal / day</span></div><div class="macro-bars" data-macros></div><a href="/nutrition/" class="text-link">Explore nutrition ↗</a></aside></div>
+  <div class="two-column-panels"><article class="panel"><span class="eyebrow">GOOD TO KNOW</span><h2>A note for you</h2><ul class="safety-list" data-safety></ul></article><article class="panel next-step-panel"><span class="eyebrow">KEEP IT PERSONAL</span><h2>Your plan can change with you.</h2><p>After trying it, tell us what felt comfortable and what needs adjusting.</p><a class="button button-dark" href="/feedback/">Share a check-in <span aria-hidden="true">↗</span></a></article></div>
+</section>
+{% endblock %}
